@@ -1,6 +1,6 @@
 import { Carousel, Layout, Menu,  } from 'antd';
 import React, { createElement } from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { NavLink, Outlet } from 'react-router-dom';
 // import  CSSProperties  from 'react';
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -19,35 +19,32 @@ const MainLayout = () => {
         background: '#364d79',
     };
 
-  /*   const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-        (icon, index) => ({
-            key: String(index + 1),
-            icon: createElement(icon),
-            label: `nav ${index + 1}`,
-        }),
-    ); */
 
     const items = [
         {
-            key: '1',
-            label:"Dashboard",
+            key: 'dashboard',
+            label: <NavLink to={"/admin/dashboard"}>Dashboard</NavLink>,
         },
         {
-            key: '2',
+            key: 'profile',
             label:"Profile"
         },
         {
-            key: '3',
+            key: 'user management',
             label: "User Management",
             children: [
                 {
-                    key: '4',
-                    label:"Create User",
+                    key: 'create admin',
+                    label: <NavLink to={"/admin/create-admin"}>Create Admin </NavLink>,
                 },
                 {
-                    key: '5',
-                    label:"Create Admin"
-                }
+                    key: 'create faculty',
+                    label:<NavLink to={"/admin/create-faculty"}>Create Faculty </NavLink>,
+                },
+                {
+                    key: 'create student',
+                    label:<NavLink to={"/admin/create-student"}>Create Student </NavLink>,
+                },
             ]
         }
     ]
@@ -80,20 +77,7 @@ const MainLayout = () => {
                             
                         }}
                     >
-                        <Carousel afterChange={onChange}>
-                            <div>
-                                <h3 style={contentStyle}>1</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>2</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>3</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>4</h3>
-                            </div>
-                        </Carousel>
+                       <Outlet/>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
