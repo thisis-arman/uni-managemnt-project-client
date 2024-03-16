@@ -1,56 +1,14 @@
 import {  Layout, Menu,  } from 'antd';
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import {  Outlet } from 'react-router-dom';
 // import  CSSProperties  from 'react';
 const { Header, Content, Footer, Sider } = Layout;
-import adminPaths, { adminSidebar } from "../../routes/admin.routes"
+import adminPaths from "../../routes/admin.routes"
+
+import {sidebarGenerator} from '../../utils/sidebarGenerator'
 
 const MainLayout = () => {
-
-/*     const onChange = (currentSlide) => {
-        console.log(currentSlide);
-    }; */
-
- /*    const contentStyle = {
-        margin: 0,
-        height: '160px',
-        color: '#fff',
-        lineHeight: '160px',
-        textAlign: 'center',
-        background: '#364d79',
-    }; */
-
-
-
-
-   /*  const items = [
-        {
-            key: 'dashboard',
-            label: <NavLink to={"/admin/dashboard"}>Dashboard</NavLink>,
-        },
-        {
-            key: 'profile',
-            label:"Profile"
-        },
-        {
-            key: 'user management',
-            label: "User Management",
-            children: [
-                {
-                    key: 'create admin',
-                    label: <NavLink to={"/admin/create-admin"}>Create Admin </NavLink>,
-                },
-                {
-                    key: 'create faculty',
-                    label:<NavLink to={"/admin/create-faculty"}>Create Faculty </NavLink>,
-                },
-                {
-                    key: 'create student',
-                    label:<NavLink to={"/admin/create-student"}>Create Student </NavLink>,
-                },
-            ]
-        }
-    ] */
+    
 
     return (
         <Layout style={{height:"100vh"}}>
@@ -68,7 +26,7 @@ const MainLayout = () => {
                 <div>
                     <h1 style={{color:"white",textAlign:"center", margin:"10px"}}>PH UNi</h1>
                 </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebar} />
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={sidebarGenerator(adminPaths,"admin")} />
             </Sider>
             <Layout>
                 <Header style={{ padding: 0 }} />

@@ -1,1 +1,1 @@
-import * from './sidebar.type'
+export * from './sidebar.type'

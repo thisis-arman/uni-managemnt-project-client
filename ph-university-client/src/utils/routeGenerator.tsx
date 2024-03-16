@@ -1,4 +1,4 @@
-import { TUserPath } from "../types/sidebar.type";
+import { TRoute, TUserPath } from "../types";
 
 
 export const routeGenerator = (items : TUserPath[]) => {
