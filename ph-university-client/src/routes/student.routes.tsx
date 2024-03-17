@@ -1,6 +1,7 @@
 import CreateStudent from "../pages/admin/CreateStudent";
 import StudentDashboard from "../pages/student/StudentDashboard";
 
+
 const studentPaths = [
     {
         name: 'Dashboard',
@@ -8,7 +9,7 @@ const studentPaths = [
         element: <StudentDashboard />
     },
     {
-        name: "student Management",
+        name: "Student Management",
         children: [
             {
                 name: "Create Student",
