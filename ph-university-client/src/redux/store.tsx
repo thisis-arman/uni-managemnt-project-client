@@ -8,9 +8,8 @@ import { baseApi } from "./api/baseApi";
          [baseApi.reducerPath]: baseApi.reducer,
         auth:authReducer
      },
-     middleware: (getDefaultMiddleware) => {
-         getDefaultMiddleware().concat(baseApi.middleware)
-     }
+     middleware: (getDefaultMiddleware) =>
+         getDefaultMiddleware().concat(baseApi.middleware),
 })
 
 

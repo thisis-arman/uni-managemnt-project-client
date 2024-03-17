@@ -13,19 +13,23 @@ const Login = () => {
 
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            userId: 'A-0002',
+            userId: 'A-0001',
             password: 'admin123',
         }
     });
 
 
-   const [login,{error}]= useLoginMutation()
+    const [login, { data, error }] = useLoginMutation()
+    console.log("from loginMutation", data)
 
     const onSubmit = (data :TFormData) => {
         const userInfo = {
             id: data.userId,
             password: data.password,
         };
+
+        console.log(data)
+        console.log({error})
 
         login(userInfo)
 
