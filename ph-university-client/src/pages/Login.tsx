@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useForm } from 'react-hook-form';
 import { useLoginMutation } from '../redux/features/auth/authApi';
 import { Button } from 'antd';
