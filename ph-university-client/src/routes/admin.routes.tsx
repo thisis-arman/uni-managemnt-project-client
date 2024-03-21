@@ -19,11 +19,7 @@ const adminPaths = [
                 path: "create-semester",
                 element: <AcademicSemester />
             },
-            {
-                name: "Create Faculty",
-                path: "create-faculty",
-                element: <CreateFaculty />
-            },
+            
            
         ]
     },
